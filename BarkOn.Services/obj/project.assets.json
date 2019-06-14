@@ -3648,11 +3648,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\BarkOn\\BarkOn.Services\\BarkOn.Services.csproj",
+      "projectUniqueName": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Services\\BarkOn.Services.csproj",
       "projectName": "BarkOn.Services",
-      "projectPath": "D:\\Projects\\BarkOn\\BarkOn.Services\\BarkOn.Services.csproj",
+      "projectPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Services\\BarkOn.Services.csproj",
       "packagesPath": "C:\\Users\\Usama\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\BarkOn\\BarkOn.Services\\obj\\",
+      "outputPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3671,8 +3671,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Projects\\BarkOn\\BarkOn.Data\\BarkOn.Data.csproj": {
-              "projectPath": "D:\\Projects\\BarkOn\\BarkOn.Data\\BarkOn.Data.csproj"
+            "D:\\Github Repo\\BarkOnRepo\\BarkOn.Data\\BarkOn.Data.csproj": {
+              "projectPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Data\\BarkOn.Data.csproj"
             }
           }
         }

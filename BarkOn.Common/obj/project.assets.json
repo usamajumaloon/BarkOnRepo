@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\BarkOn\\BarkOn.Common\\BarkOn.Common.csproj",
+      "projectUniqueName": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Common\\BarkOn.Common.csproj",
       "projectName": "BarkOn.Common",
-      "projectPath": "D:\\Projects\\BarkOn\\BarkOn.Common\\BarkOn.Common.csproj",
+      "projectPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Common\\BarkOn.Common.csproj",
       "packagesPath": "C:\\Users\\Usama\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\BarkOn\\BarkOn.Common\\obj\\",
+      "outputPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

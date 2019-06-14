@@ -12730,11 +12730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\BarkOn\\BarkOn\\BarkOn.csproj",
+      "projectUniqueName": "D:\\Github Repo\\BarkOnRepo\\BarkOn\\BarkOn.csproj",
       "projectName": "BarkOn",
-      "projectPath": "D:\\Projects\\BarkOn\\BarkOn\\BarkOn.csproj",
+      "projectPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn\\BarkOn.csproj",
       "packagesPath": "C:\\Users\\Usama\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\BarkOn\\BarkOn\\obj\\",
+      "outputPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12753,11 +12753,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Projects\\BarkOn\\BarkOn.Data\\BarkOn.Data.csproj": {
-              "projectPath": "D:\\Projects\\BarkOn\\BarkOn.Data\\BarkOn.Data.csproj"
+            "D:\\Github Repo\\BarkOnRepo\\BarkOn.Data\\BarkOn.Data.csproj": {
+              "projectPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Data\\BarkOn.Data.csproj"
             },
-            "D:\\Projects\\BarkOn\\BarkOn.Services\\BarkOn.Services.csproj": {
-              "projectPath": "D:\\Projects\\BarkOn\\BarkOn.Services\\BarkOn.Services.csproj"
+            "D:\\Github Repo\\BarkOnRepo\\BarkOn.Services\\BarkOn.Services.csproj": {
+              "projectPath": "D:\\Github Repo\\BarkOnRepo\\BarkOn.Services\\BarkOn.Services.csproj"
             }
           }
         }
