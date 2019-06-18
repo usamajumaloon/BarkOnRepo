@@ -18,3 +18,17 @@ D:\Projects\BarkOn\BarkOn.Services\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.
 D:\Projects\BarkOn\BarkOn.Services\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Core.xml
 D:\Projects\BarkOn\BarkOn.Services\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.xml
 D:\Projects\BarkOn\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.csproj.CopyComplete
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Services.deps.json
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Services.dll
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Services.pdb
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Common.dll
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Data.dll
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Data.pdb
+D:\Github Repo\BarkOnRepo\BarkOn.Services\bin\Debug\netcoreapp2.1\BarkOn.Common.pdb
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.csprojAssemblyReference.cache
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.csproj.CoreCompileInputs.cache
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.AssemblyInfoInputs.cache
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.AssemblyInfo.cs
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.csproj.CopyComplete
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.dll
+D:\Github Repo\BarkOnRepo\BarkOn.Services\obj\Debug\netcoreapp2.1\BarkOn.Services.pdb

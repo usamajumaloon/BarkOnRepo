@@ -9,7 +9,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
+using System.Text;
 
 namespace BarkOn
 {
@@ -25,8 +28,6 @@ namespace BarkOn
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             //Cors Origin
             services.AddCors();
 
@@ -37,15 +38,28 @@ namespace BarkOn
             }).AddEntityFrameworkStores<BarkOnDbContext>();
 
             services.AddAuthentication()
-                .AddCookie()
-                .AddJwtBearer();
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidIssuer = Configuration["Tokens:Issuer"],
+                        ValidAudience = Configuration["Tokens:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"]))
+                    };
+                });
 
             //Adding Connection String
             var conn = Configuration.GetConnectionString("Default");
             services.AddDbContext<BarkOnDbContext>(options => options.UseSqlServer(conn));
 
+            //Automapper
+            services.AddAutoMapper();
+
             InterfaceInjector.InjectServices(services);
 
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
+            
             //Seed
             services.AddTransient<BarkOnSeeder>();
 
@@ -59,6 +73,22 @@ namespace BarkOn
                     TermsOfService = "None",
                     Contact = new Contact() { Name = "Talking Dotnet", Email = "contact@talkingdotnet.com", Url = "www.talkingdotnet.com" }
                 });
+
+                var security = new Dictionary<string, IEnumerable<string>>
+                                {
+                                    {"Bearer", new string[] { }}
+                                };
+
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
+
+                c.AddSecurityRequirement(security);
+
             });
 
         }
@@ -68,6 +98,11 @@ namespace BarkOn
         {
             if (env.IsDevelopment())
             {
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var seeder = scope.ServiceProvider.GetService<BarkOnSeeder>();
+                    seeder.Seed().Wait();
+                }
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -75,31 +110,23 @@ namespace BarkOn
                 app.UseHsts();
             }
 
-            Mapper.Initialize(c => {
+            app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+
+            Mapper.Initialize(c =>
+            {
                 c.AddProfile<MappingProfile>();
             });
 
+
+            app.UseMvc();
             //Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
-
-            app.UseAuthentication();
-
-            app.UseHttpsRedirection();
-            app.UseMvc();
-
-
-            if (env.IsDevelopment())
-            {
-                using (var scope = app.ApplicationServices.CreateScope())
-                {
-                    var seeder = scope.ServiceProvider.GetService<BarkOnSeeder>();
-                    seeder.Seed().Wait();
-                }
-            }
         }
     }
 }

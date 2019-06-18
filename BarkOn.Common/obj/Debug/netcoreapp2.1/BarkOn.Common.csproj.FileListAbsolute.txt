@@ -7,3 +7,12 @@ D:\Projects\BarkOn\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.AssemblyI
 D:\Projects\BarkOn\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.AssemblyInfo.cs
 D:\Projects\BarkOn\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.dll
 D:\Projects\BarkOn\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.pdb
+D:\Github Repo\BarkOnRepo\BarkOn.Common\bin\Debug\netcoreapp2.1\BarkOn.Common.deps.json
+D:\Github Repo\BarkOnRepo\BarkOn.Common\bin\Debug\netcoreapp2.1\BarkOn.Common.dll
+D:\Github Repo\BarkOnRepo\BarkOn.Common\bin\Debug\netcoreapp2.1\BarkOn.Common.pdb
+D:\Github Repo\BarkOnRepo\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.csprojAssemblyReference.cache
+D:\Github Repo\BarkOnRepo\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.csproj.CoreCompileInputs.cache
+D:\Github Repo\BarkOnRepo\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.AssemblyInfoInputs.cache
+D:\Github Repo\BarkOnRepo\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.AssemblyInfo.cs
+D:\Github Repo\BarkOnRepo\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.dll
+D:\Github Repo\BarkOnRepo\BarkOn.Common\obj\Debug\netcoreapp2.1\BarkOn.Common.pdb

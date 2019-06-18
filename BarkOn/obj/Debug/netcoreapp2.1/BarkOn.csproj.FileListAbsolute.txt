@@ -19,3 +19,24 @@ D:\Projects\BarkOn\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Common.pdb
 D:\Projects\BarkOn\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.csproj.CopyComplete
 D:\Projects\BarkOn\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Services.dll
 D:\Projects\BarkOn\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Services.pdb
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.deps.json
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.runtimeconfig.json
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.runtimeconfig.dev.json
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.dll
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.pdb
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Common.dll
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Data.dll
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Services.dll
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Data.pdb
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Services.pdb
+D:\Github Repo\BarkOnRepo\BarkOn\bin\Debug\netcoreapp2.1\BarkOn.Common.pdb
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.csprojAssemblyReference.cache
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.csproj.CoreCompileInputs.cache
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.RazorAssemblyInfo.cache
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.RazorAssemblyInfo.cs
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.AssemblyInfoInputs.cache
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.AssemblyInfo.cs
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.RazorTargetAssemblyInfo.cache
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.csproj.CopyComplete
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.dll
+D:\Github Repo\BarkOnRepo\BarkOn\obj\Debug\netcoreapp2.1\BarkOn.pdb

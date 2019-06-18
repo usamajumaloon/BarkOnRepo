@@ -16,6 +16,7 @@ namespace BarkOn.Data.Application
         {
             CreatedOn = DateTime.UtcNow;
             EditedOn = DateTime.UtcNow;
+            RecordState = Enums.RecordStatus.Active;
         }
     }
 }

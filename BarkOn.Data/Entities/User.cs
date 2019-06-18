@@ -1,5 +1,4 @@
 ﻿using BarkOn.Common.Utility;
-using BarkOn.Data.Application;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.ComponentModel.DataAnnotations;
