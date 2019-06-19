@@ -232,3 +232,10 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 /BarkOn/bin
+/BarkOn/obj/Debug
+/BarkOn.Common/obj/Debug
+/BarkOn.Data/bin/Debug
+/BarkOn.Data/obj/Debug
+/BarkOn.Services/bin/Debug
+/BarkOn.Services/obj/Debug
+/BarkOn.Common/bin/Debug
