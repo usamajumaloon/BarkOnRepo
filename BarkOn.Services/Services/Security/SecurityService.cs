@@ -41,9 +41,10 @@ namespace BarkOn.Services.Services.Security
                         //Create the token
                         var claims = new[]
                         {
-                            new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
                             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                            new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
+                            new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
+                            new Claim("IsAdmin", user.IsAdmin.ToString())
                         };
 
                         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Tokens:Key"]));
@@ -60,7 +61,8 @@ namespace BarkOn.Services.Services.Security
                         var results = new LoginModel
                         {
                             Token = new JwtSecurityTokenHandler().WriteToken(token),
-                            TokenExpiration = token.ValidTo
+                            TokenExpiration = token.ValidTo,
+                            IsAdmin = user.IsAdmin
                         };
 
                         return results;

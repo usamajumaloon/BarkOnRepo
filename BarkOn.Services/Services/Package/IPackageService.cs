@@ -7,7 +7,7 @@ namespace BarkOn.Services
     {
         Task<IEnumerable<PackageModel>> GetPackageAsync();
         Task<PackageModel> GetPackageByIdAsync(int Id);
-        Task AddPackageAsync(PackageCreateModel input);
+        Task<PackageModel> AddPackageAsync(PackageCreateModel input);
         Task UpdatePackageAsync(PackageUpdateModel input);
         Task DeletePackageAsync(int Id);
     }

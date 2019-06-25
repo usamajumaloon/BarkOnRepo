@@ -21,22 +21,22 @@ namespace BarkOn.Data
         {
             _ctx.Database.EnsureCreated();
 
-            var user = await _userManager.FindByEmailAsync("usama.jumaloon@gmail.com");
+            var user = await _userManager.FindByEmailAsync("admin@gmail.com");
 
             if (user == null)
             {
                 user = new User()
                 {
-                    Name = "Usama Jumaloon",
+                    Name = "Admin",
                     IsAdmin = true,
                     CreatedOn = DateTime.UtcNow,
-                    CreatedById = 1,
-                    UserName = "usama.jumaloon@gmail.com",
-                    Email = "usama.jumaloon@gmail.com",
+                    CreatedById = "",
+                    UserName = "admin@gmail.com",
+                    Email = "admin@gmail.com",
                     RecordState = Enums.RecordStatus.Active
                 };
 
-                var result = await _userManager.CreateAsync(user, "Welcome12@#");
+                var result = await _userManager.CreateAsync(user, "Admin@123");
 
                 if (result != IdentityResult.Success)
                 {

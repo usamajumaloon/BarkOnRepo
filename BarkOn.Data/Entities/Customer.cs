@@ -9,6 +9,7 @@ namespace BarkOn.Data.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public string Name { get; set; }
         public string PhoneNo { get; set; }
         public string Email { get; set; }
         public string UserId { get; set; }

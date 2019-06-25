@@ -13,5 +13,6 @@ namespace BarkOn.Services.Models.Security
         public string Password { get; set; }
         public string Token { get; set; }
         public DateTime? TokenExpiration { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

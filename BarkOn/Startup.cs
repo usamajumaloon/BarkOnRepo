@@ -4,11 +4,13 @@ using BarkOn.Data;
 using BarkOn.Data.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
@@ -47,6 +49,8 @@ namespace BarkOn
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"]))
                     };
                 });
+
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //Adding Connection String
             var conn = Configuration.GetConnectionString("Default");

@@ -1,6 +1,7 @@
 ﻿using BarkOn.Common.Utility;
 using BarkOn.Data;
 using BarkOn.Data.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,12 @@ namespace BarkOn.Services
 {
     public class PackageService : IPackageService
     {
+        private readonly string userid;
         private readonly BarkOnDbContext context;
 
         public PackageService(BarkOnDbContext context)
         {
+            userid = Helper.GetUserId(new HttpContextAccessor());
             this.context = context;
         }
 
@@ -44,15 +47,17 @@ namespace BarkOn.Services
                 throw ex;
             }
         }
-        public async Task AddPackageAsync(PackageCreateModel input)
+        public async Task<PackageModel> AddPackageAsync(PackageCreateModel input)
         {
             try
             {
                 var entity = input.MapObject<PackageCreateModel, Package>();
                 entity.CreatedOn = DateTime.UtcNow;
-                entity.CreatedById = 1;
+                entity.CreatedById = userid;
                 await context.Packages.AddAsync(entity);
                 await context.SaveChangesAsync();
+                var model = input.MapObject<PackageCreateModel, PackageModel>();
+                return model;
             }
             catch (Exception ex)
             {
@@ -67,8 +72,8 @@ namespace BarkOn.Services
                 {
                     var entity = await context.Packages.FirstOrDefaultAsync(a => a.Id == input.Id);
                     entity.Name = input.Name;
-                    entity.CreatedOn = DateTime.UtcNow;
-                    entity.CreatedById = 1;
+                    entity.EditedOn = DateTime.UtcNow;
+                    entity.EditedById = userid;
                     context.Entry(entity).State = EntityState.Modified;
                     await context.SaveChangesAsync();
                 }
@@ -84,6 +89,8 @@ namespace BarkOn.Services
             {
                 var entity = await context.Packages.FirstOrDefaultAsync(a => a.Id == Id && a.RecordState == Enums.RecordStatus.Active);
                 entity.RecordState = Enums.RecordStatus.Inactive;
+                entity.EditedOn = DateTime.UtcNow;
+                entity.EditedById = userid;
                 await context.SaveChangesAsync();
             }
             catch (Exception ex)

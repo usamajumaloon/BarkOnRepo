@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BarkOn.Data.Entities;
 using BarkOn.Services;
+using BarkOn.Services.Models.Security;
 
 namespace BarkOn.Common
 {
@@ -32,6 +33,10 @@ namespace BarkOn.Common
             CreateMap<ServiceCreateModel, Service>().ReverseMap();
             CreateMap<ServiceUpdateModel, Service>().ReverseMap();
             CreateMap<ServiceModel, Service>().ReverseMap();
+
+            //User
+            CreateMap<UserModel, User>().ReverseMap();
+            CreateMap<CustomerModel, User>().ReverseMap();
         }
     }
 }

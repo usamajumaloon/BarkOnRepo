@@ -16,10 +16,9 @@ namespace BarkOn.Data.Entities
 
         [Required]
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
-        [Required]
-        public int CreatedById { get; set; }
+        public string CreatedById { get; set; }
         public DateTime? EditedOn { get; set; } = DateTime.UtcNow;
-        public int? EditedById { get; set; }
+        public string EditedById { get; set; }
         public Enums.RecordStatus RecordState { get; set; }
     }
 }

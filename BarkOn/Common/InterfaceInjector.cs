@@ -1,4 +1,5 @@
 ﻿using BarkOn.Services;
+using BarkOn.Services.Services.Security;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BarkOn.Common
@@ -12,6 +13,7 @@ namespace BarkOn.Common
             services.AddScoped<IPackageService, PackageService>();
             services.AddScoped<IPetService, PetService>();
             services.AddScoped<IServiceService, ServiceService>();
+            services.AddScoped<ISecurityService, SecurityService>();
         }
     }
 }
