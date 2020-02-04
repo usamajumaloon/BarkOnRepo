@@ -1,6 +1,7 @@
 ﻿using BarkOn.Common.Utility;
 using BarkOn.Data;
 using BarkOn.Data.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,11 +13,13 @@ namespace BarkOn.Services
 {
     public class CustomerService : ICustomerService
     {
+        private readonly string userid;
         private readonly BarkOnDbContext context;
         private readonly UserManager<User> userManager;
 
         public CustomerService(BarkOnDbContext context, UserManager<User> userManager)
         {
+            userid = Helper.GetUserId(new HttpContextAccessor());
             this.context = context;
             this.userManager = userManager;
         }
@@ -80,9 +83,36 @@ namespace BarkOn.Services
                 throw ex;
             }
         }
-        public async Task UpdateCustomerAsync(CustomerUpdateModel input)
+        public async Task<CustomerModel> UpdateCustomerAsync(CustomerUpdateModel input)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var model = await context.Customers.Where(s => s.Id == input.Id && s.RecordState == Enums.RecordStatus.Active).FirstOrDefaultAsync();
+                if (model == null)
+                {
+                    throw new Exception("Record not found, please enter a valid ID!");
+                }
+                model.Name = input.Name;
+                model.PhoneNo = input.PhoneNo;
+                model.EditedById = userid;
+                model.EditedOn = DateTime.UtcNow;
+
+                var user = await userManager.FindByIdAsync(model.UserId);
+                user.UserName = input.UserName;
+                user.Email = input.Email;
+
+                var hashedNewPassword = userManager.PasswordHasher.HashPassword(user, input.Password);
+                user.PasswordHash = hashedNewPassword;
+
+                await userManager.UpdateAsync(user);
+                await context.SaveChangesAsync();
+
+                return model.MapObject<Customer, CustomerModel>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public async Task DeleteCustomerAsync(int Id)
         {
@@ -90,6 +120,8 @@ namespace BarkOn.Services
             {
                 var entity = await context.Customers.FirstOrDefaultAsync(a => a.Id == Id && a.RecordState == Enums.RecordStatus.Active);
                 entity.RecordState = Enums.RecordStatus.Inactive;
+                entity.EditedOn = DateTime.UtcNow;
+                entity.EditedById = userid;
                 await context.SaveChangesAsync();
             }
             catch (Exception ex)

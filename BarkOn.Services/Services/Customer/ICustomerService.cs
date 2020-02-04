@@ -8,7 +8,7 @@ namespace BarkOn.Services
         Task<IEnumerable<CustomerModel>> GetCustomerAsync();
         Task<CustomerModel> GetCustomerByIdAsync(int Id);
         Task<CustomerModel> AddCustomerAsync(CustomerCreateModel input);
-        Task UpdateCustomerAsync(CustomerUpdateModel input);
+        Task<CustomerModel> UpdateCustomerAsync(CustomerUpdateModel input);
         Task DeleteCustomerAsync(int Id);
     }
 }

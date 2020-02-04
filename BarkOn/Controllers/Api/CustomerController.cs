@@ -34,5 +34,19 @@ namespace BarkOn.Controllers.Api
                 throw ex;
             }
         }
+
+        [HttpPut]
+        public async Task<IActionResult> PutAsync(CustomerUpdateModel data)
+        {
+            try
+            {
+                var result = await customerService.UpdateCustomerAsync(data);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

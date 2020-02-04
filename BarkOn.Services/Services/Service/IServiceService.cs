@@ -7,7 +7,7 @@ namespace BarkOn.Services
     {
         Task<IEnumerable<ServiceModel>> GetServiceAsync();
         Task<ServiceModel> GetServiceByIdAsync(int Id);
-        Task<ServiceCreateModel> AddServiceAsync(ServiceCreateModel input);
+        Task<ServiceModel> AddServiceAsync(ServiceCreateModel input);
         Task UpdateServiceAsync(ServiceUpdateModel input);
         Task DeleteServiceAsync(int Id);
     }

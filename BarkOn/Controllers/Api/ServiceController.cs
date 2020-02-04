@@ -1,6 +1,4 @@
 ﻿using BarkOn.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,22 +8,21 @@ namespace BarkOn.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class PackageController : ControllerBase
+    public class ServiceController : ControllerBase
     {
-        private readonly IPackageService packageService;
+        private readonly IServiceService serviceService;
 
-        public PackageController(IPackageService packageService)
+        public ServiceController(IServiceService serviceService)
         {
-            this.packageService = packageService;
+            this.serviceService = serviceService;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<PackageModel>> GetAsync()
+        public async Task<IEnumerable<ServiceModel>> GetAsync()
         {
             try
             {
-                return await packageService.GetPackageAsync();
+                return await serviceService.GetServiceAsync();
             }
             catch (Exception ex)
             {
@@ -34,11 +31,11 @@ namespace BarkOn.Controllers.Api
         }
 
         [HttpGet, Route("{Id:int}")]
-        public async Task<ActionResult<PackageModel>> GetAsync(int Id)
+        public async Task<ActionResult<ServiceModel>> GetAsync(int Id)
         {
             try
             {
-                var result = await packageService.GetPackageByIdAsync(Id);
+                var result = await serviceService.GetServiceByIdAsync(Id);
                 if (result == null)
                 {
                     return NotFound();
@@ -52,11 +49,11 @@ namespace BarkOn.Controllers.Api
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync(PackageCreateModel value)
+        public async Task<IActionResult> PostAsync(ServiceCreateModel value)
         {
             try
             {
-                var result = await packageService.AddPackageAsync(value);
+                var result = await serviceService.AddServiceAsync(value);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -66,11 +63,11 @@ namespace BarkOn.Controllers.Api
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutAsync(PackageUpdateModel data)
+        public async Task<IActionResult> PutAsync(ServiceUpdateModel data)
         {
             try
             {
-                await packageService.UpdatePackageAsync(data);
+                await serviceService.UpdateServiceAsync(data);
                 return Ok();
             }
             catch (Exception ex)
@@ -84,7 +81,7 @@ namespace BarkOn.Controllers.Api
         {
             try
             {
-                await packageService.DeletePackageAsync(Id);
+                await serviceService.DeleteServiceAsync(Id);
                 return Ok();
             }
             catch (Exception ex)
